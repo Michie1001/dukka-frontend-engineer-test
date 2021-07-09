@@ -1,0 +1,308 @@
+CSS reset below*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px; /*Reseting the root font size to 10px*/
+}
+/*body{
+  font-size: 1.6em; For the sake of the user's who set their browser font sizes themselves, I reverted it to 16px, but I can use 10px as a base for calculating behind the scenes 
+}*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+h1, p {
+  margin: 0;
+}
+h2{
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  transition: .5s ease all;
+}
+button:hover{
+  cursor: pointer;
+}
+a{
+  display: flex;
+}
+a:hover{
+  cursor: inherit;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main{
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+}
+
+/*>>>>>>>>>>>>>>>>>NAVBAR begins*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8rem 0;
+  border-bottom: 2px solid #bbb;
+}
+.navbar .hamburger{
+  font-size: 2.6rem;
+  line-height: 2;
+  padding: 0 2rem;
+  border-right: 2px solid #bbb;
+}
+.navbar .company{
+  text-align: right;
+}
+.navbar .company h1{
+  letter-spacing: 1.8rem;
+  font-size: 2.7rem;
+  font-weight: 500;
+}
+.navbar .company p{
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-right: 1.8rem;
+  text-transform: capitalize;
+}
+
+/*<<<<<<<<<<<<<<<<<NAVBAR ends*/
+
+.main-content{
+  padding: 3rem 2rem;
+}
+
+/*>>>>>>>>>>>>>>>Create Employee page begins*/
+
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+fieldset{
+  border:none;
+  margin: 1.5rem 0;
+  padding: .5rem;
+}
+label{
+  display: block;
+  font-weight: 500;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+}
+input{
+  line-height: 1.3;
+  font-size: 1.8rem;
+  height: 4.5rem;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.full-width-btn{
+  line-height: 1.3;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  height: 5rem;
+  margin: .5rem 0;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+}
+.full-width-btn:hover, .full-width-btn:focus{
+  background-color: #222;
+  color: #fff;
+}
+.form .next{
+  align-self: center;
+  margin: 1rem 0;
+}
+.fa-long-arrow-alt-right{
+  margin-left: 1rem;
+}
+
+
+/*>>>>>>>>>>>>>>>Create Employee page ends*/
+
+
+/*>>>>>>>>>>>>>>>List Employee page begins*/
+
+.list-head{
+  display: flex;
+  justify-content: space-between;
+}
+.half-width-btn{
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-weight: bold;
+  color: #333;
+}
+.fa-long-arrow-alt-left{
+  margin-right: 1rem;
+}
+.employee-card{
+  height: 12rem;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+.flex{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.employee-image{
+  width: 35%;
+  height: 100%;
+  background-color: brown;
+  overflow: hidden;
+}
+.employee-details{
+  padding: 1rem 2rem;
+}
+.cap{
+  text-transform: capitalize;
+}
+h3{
+  font-size: 2.4rem;
+  text-transform: capitalize;
+  margin: .5rem 0;
+}
+.employee-details p{
+  color: #777;
+  font-size: 1.4rem;
+  margin: .5rem 0;
+}
+.employee-card-options{
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+.small-btn{
+  background-color: rgba(115,120,127,.5);
+  padding: 1rem 1.2rem;
+  font-size: 2rem;
+  margin-left: .2rem;
+  visibility: hidden;
+}
+.employee-card:hover .small-btn{
+  visibility: visible;
+}
+.employee-card:click .small-btn{
+  visibility: visible;
+}
+.employee-card:focus .small-btn{
+  visibility: visible;
+}
+.employee-card:active .small-btn{
+  visibility: visible;
+}
+.error{
+  color: red;
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+}
+
+/*>>>>>>>>>>>>>>>List Employee page ends*/
+
+/*>>>>>>>>>>>>>>>Employee Details page begins*/
+
+.loan{
+  height: 10rem;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+  overflow: hidden;
+}
+.loan-date{
+  background-color: #eee;
+  color: #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  height: 100%;
+}
+.loan-details{
+  padding: 0 2rem;
+  width: 70%;
+}
+.detail{
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+}
+.detail:nth-child(1){
+  border-bottom: 1px solid #eee;
+}
+.detail p:nth-child(2){
+  margin-left: 4rem;
+}
+.break p{
+  margin-right: 2rem;
+}
+
+/*>>>>>>>>>>>>>>>Employee Details page ends*/
+
+/*Media query*/
+@media only screen and (min-width: 768px) {
+  .form{
+    width: 50vw;
+    margin: 0 auto;
+  }
+  form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: flex-end;
+  }
+  fieldset{
+    margin: 0;
+  }
+/*  .full-width-btn{
+    line-height: 0;
+    font-size: 1.6rem;
+    padding: 0;
+    margin: 0;
+  }*/
+  .employee-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+} 

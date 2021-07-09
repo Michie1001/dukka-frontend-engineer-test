@@ -1,0 +1,165 @@
+App.js:
+
+import {React, useState, useEffect} from "react";
+import './App.css';
+import Header from './components/Header';
+import Create from './components/CreateEmployee';
+import List from './components/ListEmployee';
+
+function App() {
+
+  const initialState = JSON.parse(localStorage.getItem("employees")) || []; //saving to local storage so we have the values even after reloading
+  const [input, setInput] = useState("");
+  const [employees, setEmployees] = useState(initialState);
+
+  useEffect(() => {
+    localStorage.setItem("employees", JSON.stringify(employees));
+  }, [employees]);
+  return (
+    <div className="main">
+      <Header />
+      <div className="main-content">
+        <Create
+          input={input}
+          setInput={setInput}
+          employees={employees}
+          setEmployees={setEmployees}
+        />
+        <List
+          employees={employees}
+          setEmployees={setEmployees}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+List Employee:
+
+
+import React from 'react';
+import user from '../images/employee.jpg';
+
+const List = ({employees, setEmployees}) => {
+
+	const handleDelete = ({id}) => { //deletes employee from list
+		setEmployees(employees.filter((employee) => employee.id !== id));
+	};
+
+	// shows and error message when the edit button is clicked
+	const [errorMessage, setErrorMessage] = React.useState("");
+	const editError = () => {
+		setErrorMessage('Sorry, this feature is unavailable right now');
+	};
+
+	return (
+			<div className="form">
+				<div className="list-head">
+					<h2>Employees</h2>
+					<button className="half-width-btn">
+						<i className="fas fa-long-arrow-alt-left"></i>
+						Previous
+					</button>
+				</div>
+				<div className="employee-cards">
+					{employees.map((employee) => (
+						<div className="employee-card" key={employee.id}>
+							<div className="employee-image">
+								<img src={user} alt="An Employee Portrait" />
+							</div>
+							<div className="employee-details">
+								<h3>{employee.title}</h3>
+								<p className="cap">Software Engineer</p>
+								<p>(+234) (0) 815426739</p>
+								<p>miasbyjub@ajjo.com</p>
+							</div>
+
+							<div className="employee-card-options">
+								<button className="small-btn">
+									<i className="far fa-edit" onClick={() => editError()}></i>
+								</button>
+								<button className="small-btn" onClick={() => handleDelete(employee)}>
+									<i className="far fa-trash-alt"></i>
+								</button>
+							</div>
+							{errorMessage && <div className="error"> {errorMessage} </div>}
+						</div>
+					))}
+				</div>
+			</div>
+		);
+};
+
+export default List;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create employee:
+
+
+
+import React from 'react';
+import {v4 as uuidv4} from "uuid"; //for unique ids
+
+const Create = ({input, setInput, employees, setEmployees}) => {
+	const onInputChange = (event) => {
+		setInput(event.target.value);
+	};
+	const onFormSubmit = (event) => {
+		event.preventDefault();
+		setEmployees([...employees, {id: uuidv4(), title: input, completed: false}]);
+		setInput("");
+	};
+	return (
+			<div className="form">
+				<h2>Create Employee Profile</h2>
+				<form onSubmit={onFormSubmit}>
+					<fieldset>
+						<label>Full Name *</label>
+						<input type="text" required value={input} onChange={onInputChange} />
+					</fieldset>
+					<fieldset>
+					  <label>Phone Number *</label>
+					  <input type="number" required />
+					</fieldset>
+
+					<button className="full-width-btn" type="submit">Save</button>
+				</form>
+				<button className="full-width-btn next">
+					Next
+					<i className="fas fa-long-arrow-alt-right"></i>
+				</button>
+			</div>
+		);
+};
+
+export default Create;
