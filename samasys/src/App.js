@@ -61,13 +61,8 @@ function App() {
               )}
             />
             <Route
-              path="/details"
-              render={(props) => (
-                <Details
-                  {...props} //destructure the props
-                  employees={employees}
-                />
-              )}
+              path="/employee/:id"
+              component={Details}
             />
           </Switch>
         </div>

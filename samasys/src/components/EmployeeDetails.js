@@ -1,33 +1,27 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import Card from './EmployeeCard';
+import user from '../images/employee.jpg';
 
 
-const Details = () => {
-	const mock = () => {
-		for (let i = 0; i <= 10; i++) {
-			return(
-				<div className="loan flex">
-					<div className="loan-date">
-						<span>jan</span>
-					</div>
-					<div className="loan-details">
-						<div className="detail">
-							<p>Borrowed:</p>
-							<p>N50,000</p>
-						</div>
-						<div className="detail">
-							<p>Recievable:</p>
-							<p>N100,000</p>
-						</div>
-					</div>
-				</div>
-			);
-		};
-	};
+const Details = (props) => {
+	console.log(props);
+	// const{name, number, email, position} = props.location.state.employee;
+
 	return(
 			<div className="employee-details form">
-					
+					<div className="employee-cards">
+							<div className="employee-card flex">
+								<div className="employee-image">
+									<img src={user} alt="An Employee Portrait" />
+								</div>
+								<div className="employee-details">
+									<h3>name</h3>
+									<p className="cap">position</p>
+									<p>(+234) (0) number</p>
+									<p>email</p>
+								</div>
+							</div>
+					</div>
 
 					<div className="list-head">
 						<h2>Loan Record</h2>
@@ -76,7 +70,36 @@ const Details = () => {
 						<hr/>
 					</div>
 
-					{mock}
+					<div className="loan flex">
+						<div className="loan-date">
+							<span>jan</span>
+						</div>
+						<div className="loan-details">
+							<div className="detail">
+								<p>Borrowed:</p>
+								<p>N50,000</p>
+							</div>
+							<div className="detail">
+								<p>Recievable:</p>
+								<p>N100,000</p>
+							</div>
+						</div>
+					</div>
+					<div className="loan flex">
+						<div className="loan-date">
+							<span>jan</span>
+						</div>
+						<div className="loan-details">
+							<div className="detail">
+								<p>Borrowed:</p>
+								<p>N50,000</p>
+							</div>
+							<div className="detail">
+								<p>Recievable:</p>
+								<p>N100,000</p>
+							</div>
+						</div>
+					</div>
 			</div>
 		)
 }; 
