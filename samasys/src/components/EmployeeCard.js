@@ -10,12 +10,12 @@ const Card = (props) => {
 			<div className="employee-cards">
 					<div className="employee-card flex">
 						<div className="employee-image">
-							<Link to={{pathname: `/employee/${id}`, state:{employee:props.employee}}}>
+							<Link to="/employee-details">
 								<img src={user} alt="An Employee Portrait" />
 							</Link>
 						</div>
 						<div className="employee-details">
-							<Link to={{pathname: `/employee/${id}`, state:{employee:props.employee}}}>
+							<Link to="/employee-details">
 								<h3>{name}</h3>
 							</Link>
 							<p className="cap">{position}</p>

@@ -253,9 +253,11 @@ h3{
   background-color: #eee;
   color: #999;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 1.6rem;
   width: 30%;
   height: 100%;
 }

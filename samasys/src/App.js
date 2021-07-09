@@ -61,7 +61,7 @@ function App() {
               )}
             />
             <Route
-              path="/employee/:id"
+              path="/employee-details"
               component={Details}
             />
           </Switch>

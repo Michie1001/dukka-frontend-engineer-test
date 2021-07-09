@@ -35,6 +35,7 @@ const Details = (props) => {
 
 					<div className="loan flex">
 						<div className="loan-date">
+							<i className="fas fa-calendar-alt"></i>
 							<span>feb</span>
 						</div>
 						<div className="loan-details">
@@ -51,6 +52,7 @@ const Details = (props) => {
 
 					<div className="loan flex">
 						<div className="loan-date">
+							<i className="fas fa-calendar-alt"></i>
 							<span>jan</span>
 						</div>
 						<div className="loan-details">
@@ -72,7 +74,8 @@ const Details = (props) => {
 
 					<div className="loan flex">
 						<div className="loan-date">
-							<span>jan</span>
+							<i className="fas fa-calendar-alt"></i>
+							<span>Dec</span>
 						</div>
 						<div className="loan-details">
 							<div className="detail">
@@ -87,7 +90,24 @@ const Details = (props) => {
 					</div>
 					<div className="loan flex">
 						<div className="loan-date">
-							<span>jan</span>
+							<i className="fas fa-calendar-alt"></i>
+							<span>Dec</span>
+						</div>
+						<div className="loan-details">
+							<div className="detail">
+								<p>Borrowed:</p>
+								<p>N50,000</p>
+							</div>
+							<div className="detail">
+								<p>Recievable:</p>
+								<p>N100,000</p>
+							</div>
+						</div>
+					</div>
+					<div className="loan flex">
+						<div className="loan-date">
+							<i className="fas fa-calendar-alt"></i>
+							<span>Dec</span>
 						</div>
 						<div className="loan-details">
 							<div className="detail">
